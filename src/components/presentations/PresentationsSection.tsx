@@ -80,16 +80,16 @@ export function PresentationsSection() {
               </div>
 
               {/* Content */}
-              <div className="relative z-10 h-full w-full p-8 md:p-12 flex flex-col justify-end">
-                <div className="flex justify-between items-end">
-                  <div>
-                    <span className="text-white/60 text-xs font-bold uppercase tracking-widest mb-2 block">
+              <div className="relative z-10 h-full w-full p-6 md:p-12 flex flex-col justify-end">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-0">
+                  <div className="flex-1">
+                    <span className="text-white/60 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-2 block">
                       {slide.date}
                     </span>
-                    <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase mb-2">
+                    <h3 className="text-2xl md:text-5xl font-black text-white tracking-tighter uppercase mb-2 leading-tight">
                       {slide.title}
                     </h3>
-                    <p className="text-white/80 font-medium text-sm md:text-lg max-w-md">
+                    <p className="text-white/80 font-medium text-xs md:text-lg max-w-md">
                       {slide.subtitle}
                     </p>
                   </div>
@@ -98,7 +98,7 @@ export function PresentationsSection() {
                     href={slide.link}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="hidden md:flex items-center justify-center w-20 h-20 rounded-full bg-white text-black text-xs font-black uppercase tracking-tighter hover:bg-[#FF5B22] hover:text-white transition-colors duration-300 shadow-xl"
+                    className="flex items-center justify-center w-14 h-14 md:w-20 md:h-20 rounded-full bg-white text-black text-[10px] md:text-xs font-black uppercase tracking-tighter hover:bg-[#FF5B22] hover:text-white transition-colors duration-300 shadow-xl self-end md:self-auto"
                   >
                     View
                   </motion.a>
