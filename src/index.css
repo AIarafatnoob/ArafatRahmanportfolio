@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FFFFFF;
+  --color-secondary: #FF5B22;
+  --color-accent: #CCC7BF;
+  --color-foreground: #31393C;
+  --color-background: #FFFFFF;
+  
+  --color-card: rgba(204, 199, 191, 0.1);
+  --color-card-border: rgba(49, 57, 60, 0.1);
+  --color-muted: #808080;
+  --color-brand-orange: #FF5B22;
+  
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 3rem;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  
+  html {
+    /* Scales font-size globally using viewport width, providing a proportional layout that mimics zooming out on large screens */
+    font-size: clamp(12px, 0.75vw, 16px);
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/20 selection:text-primary;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-secondary/30 backdrop-blur-md border border-card-border rounded-2xl;
+  }
+  
+  .grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(49, 57, 60, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(49, 57, 60, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  @keyframes gradient-slow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animate-gradient-slow {
+    animation: gradient-slow 15s ease infinite;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(49, 57, 60, 0.2);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(49, 57, 60, 0.4);
+  }
+
+}
+
+html.modal-open,
+body.modal-open {
+  overflow: hidden;
+  height: 100vh;
+}
