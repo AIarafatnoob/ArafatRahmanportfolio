@@ -32,7 +32,9 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/CV/ARAFAT RAHMAN CV 2026 March.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-2 rounded-full bg-white text-[#FF5B22] text-xs font-bold uppercase tracking-widest hover:bg-white/90 transition-all ml-4"
           >
             Resume
@@ -66,7 +68,9 @@ export function Navbar() {
         ))}
         <div className="pt-2 border-t border-white/20">
           <a
-            href="#contact"
+            href="/CV/ARAFAT RAHMAN CV 2026 March.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
             className="w-full text-center px-6 py-3 rounded-full bg-white text-[#FF5B22] text-sm font-bold uppercase tracking-widest hover:bg-white/90 transition-all block"
           >
